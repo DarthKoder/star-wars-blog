@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="main-heading">Welcome to the Star Wars Disscussion Blog</h1>
+    {% for post in posts %}
+        <div class="card">
+            <div class="car-content">
+                <span class="card-title">{{ post.title }}</span>
+                <p>{{ post.body }}</p>
+                <p>Posted by {{ post.user.username }} on {{ post.timestamp.strftime("%d-%m-%Y %H:%M") }}</p>
+            </div>
+            <div class="card-action">
+                <a href="{{ url_for("post", post_id=post.id) }}">Read More</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

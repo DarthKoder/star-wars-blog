@@ -10,3 +10,4 @@ from werkzeug.urls import url_parse
 def index():
     posts = Post.query.all()
     return render_template("index.html", )
+
