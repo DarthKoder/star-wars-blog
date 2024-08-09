@@ -21,22 +21,24 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
-                <li><a href="{{ url_for('login') }}">Login</a></li>
-                <li><a href="{{ url_for('register')}}">Register</a></li>
-                <li><a href="{{ url_for('index') }}">Discussions</a></li>
+                    <li><a href="">Login</a></li>
+                    <li><a href="">Register</a></li>
+                    <li><a href="">Discussions</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
         {% if current_user.is_authenticated %}
-        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
-        <li><a href="{{ url_for('login') }}">Login</a></li>
-        <li><a href="{{ url_for('register')}}">Register</a></li>
-        <li><a href="{{ url_for('index') }}">Discussions</a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">Register</a></li>
+            <li><a href="">Discussions</a></li>
+        {% endif %}
     </ul>
 
     <div class="container">
@@ -48,7 +50,7 @@
                     {% endfor %}
                 </ul>
             {% endif %}
-        {% enfwith %}
+        {% endwith %}
         {% block content %}
 
         {% endblock %}
