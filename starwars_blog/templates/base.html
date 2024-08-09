@@ -23,7 +23,7 @@
                 {% if current_user.is_authenticated %}
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
-                    <li><a href="">Login</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
                     <li><a href="">Register</a></li>
                     <li><a href="">Discussions</a></li>
                 {% endif %}
@@ -35,7 +35,7 @@
         {% if current_user.is_authenticated %}
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
-            <li><a href="">Login</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="">Register</a></li>
             <li><a href="">Discussions</a></li>
         {% endif %}
