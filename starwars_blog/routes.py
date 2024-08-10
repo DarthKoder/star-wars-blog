@@ -5,13 +5,14 @@ from starwars_blog.models import User, Post, Comment
 from urllib.parse import urlparse as url_parse
 
 
-
+# Main homepage
 @app.route('/')
 @app.route('/index')
 def index():
     posts = Post.query.all()
     return render_template('index.html', title='Home', posts=posts)
 
+# Login function and requests with authentication
 @app.route('/login', methods=["GET", "POST"])
 def login():
     if current_user.is_authenticated:
@@ -27,4 +28,30 @@ def login():
             return redirect(url_for('login'))
         login_user(user, remember=request.form.get("remember_me"))
     return render_template('login.html', title='Sign In')
+        
+
+# Logout dunction
+@app.route('logout')
+def logout():
+    if current_user.is_authenticated:
+        logout_user()
+        return redirect(url_for('index'))
+    
+
+# Register function 
+@app.route('/register', methods=["GET", "POST"])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    if request.method == "POST":
+        username = request.form["username"]
+        email = request.form["email"]
+        password = request.form["password"]
+        user = User(username=username, email=email)
+        user.set.password(password)
+        db.session.add(user)
+        db.session.commit()
+        flash("Congratulations, you are now a registered user!")
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register')
         
