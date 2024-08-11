@@ -10,7 +10,7 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), index=True, unique=True, nullable=False)
     email = db.Column(db.String(100), index=True, unique=True, nullable=True)
-    password_hash = db.Column(db.String(50))
+    password_hash = db.Column(db.String(255))
 
     def set_password(self, password):
         # This is to set the user's password hash

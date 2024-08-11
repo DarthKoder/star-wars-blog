@@ -31,7 +31,7 @@ def login():
         
 
 # Logout dunction
-@app.route('logout')
+@app.route('/logout')
 def logout():
     if current_user.is_authenticated:
         logout_user()
@@ -48,7 +48,7 @@ def register():
         email = request.form["email"]
         password = request.form["password"]
         user = User(username=username, email=email)
-        user.set.password(password)
+        user.set_password(password)
         db.session.add(user)
         db.session.commit()
         flash("Congratulations, you are now a registered user!")

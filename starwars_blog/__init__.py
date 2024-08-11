@@ -15,6 +15,7 @@ def create_app():
     # Load environment variables if env.py exists
     if os.path.exists("env.py"):
         import env
+        print(f"Error loading env.py: {e}")
 
     # Set the secret key for session management
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
