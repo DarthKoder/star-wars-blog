@@ -54,4 +54,18 @@ def register():
         flash("Congratulations, you are now a registered user!")
         return redirect(url_for('login'))
     return render_template('register.html', title='Register')
-        
+
+
+# New post function
+@app.route('/post/new', methods=["GET", "POST"])
+@login_required
+def new_post():
+    if request.method == "POST":
+        title = request.form["title"]
+        body = request.form["body"]
+        post = Post(title=title, body=body, user_id=current_user.id)
+        db.session.add(post)
+        db.session.commit()
+        flash("Your post is now live!")
+        return redirect(url_for('index'))
+    return render_template('create_post.html', title='Create Post')
