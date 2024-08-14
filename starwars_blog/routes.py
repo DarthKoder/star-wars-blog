@@ -18,8 +18,8 @@ def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     if request.method == "POST":
-        login_input = request.form["username"]
-        password = request.form["password"]
+        login_input = request.form.get("login")
+        password = request.form.get("password")
         user = User.query.filter(
             (User.username == login_input) | (User.email == login_input)
         ).first()

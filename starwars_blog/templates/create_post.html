@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2 class="create-post-header">Create Post</h2>
+    <form method="POST" action="{{ url_for('new_post') }}">
+        <div class="input-field">
+            <input type="text" id="title" name="title" required>
+            <label for="title">Title</label>
+        </div>
+        <div class="input-field">
+            <textarea class="materialize-textarea" id="body" name="body" required></textarea>
+            <label for="body">Post Text</body> 
+        </div>
+        <button type="submit" class="btn post-submit">Submit Post</button>
+    </form>
+{% endblock %}
