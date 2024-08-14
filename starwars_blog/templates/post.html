@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2 class="post-heading">{{ post.title}}</h2>
+    <p>{{ post.body }}</p>
+    <p>Posted by {{ post.user,username }} on {{ post.timestamp.strftime("%d-%m-%Y %H:%M") }}</p>
+    <hr>
+    <h4 class="comment-heading">Comments</h4>
+    {% for comment in comments %}
+        <div class="card">
+            <div class="card-content">
+                <p class="comment-body">{{ comment.body }}</p>
+                <p class="comment-details">Commented by {{ comment.user.username }} on {{ comment.timestamp.strftime("%d-%m-%Y %H:%M") }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    {% if current_user.is_authenticated %}
+        <form method="POST" action="{{ url_for('post', post_id=post.id) }}">
+            <div class="input-field">
+                <textarea class="materialize-textarea" id="body" name="body" required></textarea>
+                <label for="body">Comment</label>
+            </div>
+            <button type="submit" class="btn submit-comment-btn">Submit</button>
+        </form>
+    {% else %}
+        <p><a href="{{ url_for('login') }}">Sign in</A> to comment.</p>
+    {% endif %}
+{% endblock %}

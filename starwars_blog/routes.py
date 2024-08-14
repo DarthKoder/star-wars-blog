@@ -69,3 +69,17 @@ def new_post():
         flash("Your post is now live!")
         return redirect(url_for('index'))
     return render_template('create_post.html', title='Create Post')
+
+
+@app.route('/post/<int:post_id>', methods=["GET", "POST"])
+def post(post_id):
+    post=Post.query.get_or_404(post_id)
+    if request.method == "POST":
+        body = request.form["body"]
+        comment = Comment(body=body, post_id=post.id, user_id=current_user.id)
+        db.session.add(comment)
+        db.session.commit()
+        flash("Your comment has been added.")
+        return redirect(url_for('post', post_id=post_id))
+    comments = Comment.query.filter_by(post_id=post_id).all()
+    return render_template('post.html', title=post.title, post=post, comments=comments)
