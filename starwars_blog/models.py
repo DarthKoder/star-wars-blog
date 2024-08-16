@@ -1,4 +1,5 @@
 from datetime import datetime
+from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from starwars_blog import db, login
@@ -11,6 +12,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(50), index=True, unique=True, nullable=False)
     email = db.Column(db.String(100), index=True, unique=True, nullable=True)
     password_hash = db.Column(db.String(255))
+    posts = db.relationship('Post', backref='author', lazy=True)  # Relationship to Post
 
     def set_password(self, password):
         # This is to set the user's password hash
@@ -25,9 +27,9 @@ class User(UserMixin, db.Model):
     
     
 # This will load the user by their user ID
-@login.user_loader(id)
-def load_user(id):
-    return User.query.get(int(id))
+@login.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 
 # This class is for the post creation layout
@@ -37,11 +39,15 @@ class Post (db.Model):
     title = db.Column(db.String(120))
     body = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     film_name = db.Column(db.String(50), nullable=True)
     film_num = db.Column(db.Integer, nullable=True)
     year_of_release = db.Column(db.Integer, nullable=True)
     favourite_character = db.Column(db.String(100), nullable=True)
+    
+    @property
+    def user(self):
+        return User.query.get(self.user_id)
     
 
 # This class is for the comment creation layout

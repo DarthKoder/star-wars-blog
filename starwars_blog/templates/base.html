@@ -20,7 +20,9 @@
             <a href="{{ url_for('index') }}" class="brand-logo">Star Wars Discussion</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
+                
                 {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('new_post') }}">Create Post</a></li>
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
                     <li><a href="{{ url_for('login') }}">Login</a></li>
@@ -33,6 +35,7 @@
 
     <ul class="sidenav" id="mobile-demo">
         {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('new_post') }}">Create Post</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
             <li><a href="{{ url_for('login') }}">Login</a></li>

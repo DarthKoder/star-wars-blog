@@ -17,16 +17,22 @@ def index():
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
+    
     if request.method == "POST":
         login_input = request.form.get("login")
         password = request.form.get("password")
+        remember_me = 'remember_me' in request.form
         user = User.query.filter(
             (User.username == login_input) | (User.email == login_input)
         ).first()
+        
         if user is None or not user.check_password(password):
             flash("Invalid username or password")
             return redirect(url_for('login'))
-        login_user(user, remember=request.form.get("remember_me"))
+
+        login_user(user, remember=remember_me)
+        return redirect(url_for('index'))
+                   
     return render_template('login.html', title='Sign In')
         
 
@@ -35,7 +41,7 @@ def login():
 def logout():
     if current_user.is_authenticated:
         logout_user()
-        return redirect(url_for('index'))
+    return redirect(url_for('index'))
     
 
 # Register function 
@@ -83,3 +89,23 @@ def post(post_id):
         return redirect(url_for('post', post_id=post_id))
     comments = Comment.query.filter_by(post_id=post_id).all()
     return render_template('post.html', title=post.title, post=post, comments=comments)
+
+
+@app.route('/post/edit/<int:post_id>', methods=['GET', 'POST'])
+@login_required
+def edit_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    
+    # Only the author can edit the post
+    if post.user_id != current_user.id:
+        flash('You cannot edit this post.')
+        return redirect(url_for('index'))
+
+    if request.method == 'POST':
+        post.title = request.form['title']
+        post.body = request.form['body']
+        db.session.commit()
+        flash('Your post has been updated.')
+        return redirect(url_for('post', post_id=post.id))
+
+    return render_template('edit_post.html', title='Edit Post', post=post)

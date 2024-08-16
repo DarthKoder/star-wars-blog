@@ -3,7 +3,13 @@
     <h2 class="post-heading">{{ post.title}}</h2>
     <p>{{ post.body }}</p>
     <p>Posted by {{ post.user,username }} on {{ post.timestamp.strftime("%d-%m-%Y %H:%M") }}</p>
+
+    {% if current_user.is_authenticated and current_user,id == post.user.id %}
+        <a href="{{ url_for('edit_post', post_id=post.id) }}" class="btm edit-post-btn">Edit Post</a>
+    {% endif %}
+
     <hr>
+
     <h4 class="comment-heading">Comments</h4>
     {% for comment in comments %}
         <div class="card">
@@ -13,6 +19,7 @@
             </div>
         </div>
     {% endfor %}
+
     {% if current_user.is_authenticated %}
         <form method="POST" action="{{ url_for('post', post_id=post.id) }}">
             <div class="input-field">
@@ -24,4 +31,9 @@
     {% else %}
         <p><a href="{{ url_for('login') }}">Sign in</A> to comment.</p>
     {% endif %}
+
+    <br>
+
+    <a href="{{ url_for('index') }}" class="btn BTD-btn">Back to Discussion</a>
+    
 {% endblock %}
