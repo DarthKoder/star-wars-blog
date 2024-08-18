@@ -22,12 +22,13 @@
             <ul class="right hide-on-med-and-down">
                 
                 {% if current_user.is_authenticated %}
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('new_post') }}">Create Post</a></li>
                     <li><a href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                    <li><a href="">Discussions</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>  
                 {% endif %}
             </ul>
         </div>
@@ -35,12 +36,13 @@
 
     <ul class="sidenav" id="mobile-demo">
         {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('new_post') }}">Create Post</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
+            <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
-            <li><a href="">Discussions</a></li>
         {% endif %}
     </ul>
 
@@ -58,7 +60,13 @@
 
         {% endblock %}
     </div>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>

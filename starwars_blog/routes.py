@@ -9,7 +9,7 @@ from urllib.parse import urlparse as url_parse
 @app.route('/')
 @app.route('/index')
 def index():
-    posts = Post.query.all()
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
     return render_template('index.html', title='Home', posts=posts)
 
 # Login function and requests with authentication
@@ -69,7 +69,21 @@ def new_post():
     if request.method == "POST":
         title = request.form["title"]
         body = request.form["body"]
-        post = Post(title=title, body=body, user_id=current_user.id)
+        film_name = request.form.get("film_name")
+        film_num = request.form.get("film_num")
+        year_of_release = request.form.get("year_of_release")
+        favourite_character = request.form.get("favourite_character")
+        
+        post = Post(
+            title=title,
+            body=body,
+            user_id=current_user.id,
+            film_name=film_name,
+            film_num=film_num,
+            year_of_release=year_of_release,
+            favourite_character=favourite_character
+        )
+        
         db.session.add(post)
         db.session.commit()
         flash("Your post is now live!")
@@ -82,7 +96,13 @@ def post(post_id):
     post=Post.query.get_or_404(post_id)
     if request.method == "POST":
         body = request.form["body"]
+        film_name = request.form.get("film_name")
+        film_num = request.form.get("film_num")
+        year_of_release = request.form.get("year_of_release")
+        favourite_character = request.form.get("favourite_character")
+        
         comment = Comment(body=body, post_id=post.id, user_id=current_user.id)
+        
         db.session.add(comment)
         db.session.commit()
         flash("Your comment has been added.")

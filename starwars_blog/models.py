@@ -44,6 +44,7 @@ class Post (db.Model):
     film_num = db.Column(db.Integer, nullable=True)
     year_of_release = db.Column(db.Integer, nullable=True)
     favourite_character = db.Column(db.String(100), nullable=True)
+    user = db.relationship('User', backref=db.backref('posts', lazy=True))
     
     @property
     def user(self):
