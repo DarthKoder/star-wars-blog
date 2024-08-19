@@ -1,5 +1,6 @@
+// datepicker script
 document.addEventListener('DOMContentLoaded', function() {
-    var datepicker = document.querySelectorAll('.datepicker');
+    let datepicker = document.querySelectorAll('.datepicker');
     M.Datepicker.init(datepicker);
   });
 
@@ -8,3 +9,15 @@ document.addEventListener('DOMContentLoaded', function() {
   $(document).ready(function(){
     $('.datepicker').datepicker();
   });
+
+// Modal script
+document.addEventListener('DOMContentLoaded', function() {
+  let modal = document.querySelectorAll('.modal');
+  M.Modal.init(elems, options);
+});
+
+// Or with jQuery
+
+$(document).ready(function(){
+  $('.modal').modal();
+})

@@ -116,7 +116,7 @@ def post(post_id):
 def edit_post(post_id):
     post = Post.query.get_or_404(post_id)
     
-    # Only the author can edit the post
+    # Only allow the user who created the post can edit the post
     if post.user_id != current_user.id:
         flash('You cannot edit this post.')
         return redirect(url_for('index'))
@@ -129,3 +129,33 @@ def edit_post(post_id):
         return redirect(url_for('post', post_id=post.id))
 
     return render_template('edit_post.html', title='Edit Post', post=post)
+
+@app.route('/post/delete/<int:post_id>', methods=['POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+
+    # Only allow the user who created the post to delete it
+    if post.user_id != current_user.id:
+        flash('You cannot delete this post.')
+        return redirect(url_for('index'))
+
+    db.session.delete(post)
+    db.session.commit()
+    flash('Post has been deleted.')
+    return redirect(url_for('index'))
+
+@app.route('/comment/delete/<int:comment_id>', methods=['POST'])
+@login_required
+def delete_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+
+    # Only allow the user who created the comment to delete it
+    if comment.user_id != current_user.id:
+        flash('You cannot delete this comment.')
+        return redirect(url_for('post', post_id=comment.post_id))
+
+    db.session.delete(comment)
+    db.session.commit()
+    flash('Comment has been deleted.')
+    return redirect(url_for('post', post_id=comment.post_id))
