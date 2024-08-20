@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2 class="post-heading">{{ post.title}}</h2>
+    <h2 class="post-heading">{{ post.title }}</h2>
     <p>{{ post.body }}</p>
 
     {% if post.film_name %}
@@ -19,9 +19,23 @@
 
     {% if current_user.is_authenticated and current_user.id == post.user.id %}
         <!-- Edit post button -->
-        <a href="{{ url_for('edit_post', post_id=post.id) }}" class="btm edit-post-btn">Edit Post</a>
+        <a href="{{ url_for('edit_post', post_id=post.id) }}" class="btn edit-post-btn">Edit Post</a>
         <!-- Delete post button -->
-        <button class="btn red" data-target="deletePostModal{{ post.id }}" onclick="openModal('deletePostModal{{ post.id }}')">Delete Post</button>
+        <button class="btn red post-del-btn" data-target="deletePostModal{{ post.id }}" onclick="openModal('deletePostModal{{ post.id }}')">Delete Post</button>
+
+        <!-- Delete post modal -->
+        <div id="deletePostModal{{ post.id }}" class="modal">
+            <div class="modal-content">
+                <h4>Delete Post</h4>
+                <p>Are you sure you want to delete this post?</p>
+            </div>
+            <div class="modal-footer">
+                <form method="POST" action="{{ url_for('delete_post', post_id=post.id) }}">
+                    <button type="submit" class="btn red">Delete</button>
+                    <button type="button" class="modal-close btn">Cancel</button>
+                </form>
+            </div>
+        </div>
     {% endif %}
 
     <hr>
@@ -35,9 +49,22 @@
 
                 {% if current_user.id == comment.user_id %}
                     <!-- Delete Comment Button -->
-                    <button class="btn red" data-target="deleteCommentModal{{ comment.id }}" onclick="openModal('deleteCommentModal{{ comment.id }}')">Delete Comment</button>
-                {% endif %}
+                    <button class="btn red comment-del-btn" data-target="deleteCommentModal{{ comment.id }}" onclick="openModal('deleteCommentModal{{ comment.id }}')">Delete Comment</button>
 
+                    <!-- Delete comment modal -->
+                    <div id="deleteCommentModal{{ comment.id }}" class="modal">
+                        <div class="modal-content">
+                            <h4>Delete Comment</h4>
+                            <p>Are you sure you want to delete this comment?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <form method="POST" action="{{ url_for('delete_comment', comment_id=comment.id) }}">
+                                <button type="submit" class="btn red">Delete</button>
+                                <button type="button" class="modal-close btn">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
         </div>
     {% endfor %}
@@ -51,7 +78,7 @@
             <button type="submit" class="btn submit-comment-btn">Submit</button>
         </form>
     {% else %}
-        <p><a href="{{ url_for('login') }}">Sign in</A> to comment.</p>
+        <p><a href="{{ url_for('login') }}">Sign in</a> to comment.</p>
     {% endif %}
 
     <br>

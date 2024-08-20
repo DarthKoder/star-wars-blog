@@ -12,12 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Modal script
 document.addEventListener('DOMContentLoaded', function() {
-  let modal = document.querySelectorAll('.modal');
-  M.Modal.init(elems, options);
+  let modals = document.querySelectorAll('.modal');
+  M.Modal.init(modals);
 });
 
 // Or with jQuery
-
 $(document).ready(function(){
   $('.modal').modal();
-})
+});
+
+// Function to open a specific modal by its ID
+function openModal(modalId) {
+  let instance = M.Modal.getInstance(document.getElementById(modalId));
+  instance.open();
+}
