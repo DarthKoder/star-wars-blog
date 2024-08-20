@@ -45,6 +45,7 @@ class Post (db.Model):
     year_of_release = db.Column(db.Integer, nullable=True)
     favourite_character = db.Column(db.String(100), nullable=True)
     user = db.relationship('User', backref=db.backref('posts', lazy=True))
+    comments = db.relationship('Comment', backref='post', cascade="all, delete-orphan")
     
     @property
     def user(self):
@@ -57,7 +58,7 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    post_id = db.Column(db.Integer, db.ForeignKey("post.id"))
+    post_id = db.Column(db.Integer, db.ForeignKey("post.id", ondelete='CASCADE'), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     user = db.relationship("User", backref="comments")
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
