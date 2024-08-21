@@ -69,10 +69,10 @@ def new_post():
     if request.method == "POST":
         title = request.form["title"]
         body = request.form["body"]
-        film_name = request.form.get("film_name")
-        film_num = request.form.get("film_num")
-        year_of_release = request.form.get("year_of_release")
-        favourite_character = request.form.get("favourite_character")
+        film_name = request.form.get("film_name", "")
+        film_num = request.form.get("film_num", "")
+        year_of_release = request.form.get("year_of_release", "")
+        favourite_character = request.form.get("favourite_character", "")
         
         post = Post(
             title=title,
@@ -96,10 +96,6 @@ def post(post_id):
     post=Post.query.get_or_404(post_id)
     if request.method == "POST":
         body = request.form["body"]
-        film_name = request.form.get("film_name")
-        film_num = request.form.get("film_num")
-        year_of_release = request.form.get("year_of_release")
-        favourite_character = request.form.get("favourite_character")
         
         comment = Comment(body=body, post_id=post.id, user_id=current_user.id)
         
@@ -107,6 +103,7 @@ def post(post_id):
         db.session.commit()
         flash("Your comment has been added.")
         return redirect(url_for('post', post_id=post_id))
+    
     comments = Comment.query.filter_by(post_id=post_id).all()
     return render_template('post.html', title=post.title, post=post, comments=comments)
 
@@ -116,7 +113,7 @@ def post(post_id):
 def edit_post(post_id):
     post = Post.query.get_or_404(post_id)
     
-    # Only allow the user who created the post can edit the post
+    # Ensure only the post creator can edit
     if post.user_id != current_user.id:
         flash('You cannot edit this post.')
         return redirect(url_for('index'))
@@ -124,11 +121,17 @@ def edit_post(post_id):
     if request.method == 'POST':
         post.title = request.form['title']
         post.body = request.form['body']
+        post.film_name = request.form.get('film_name', "")
+        post.film_num = request.form.get('film_num', "")
+        post.year_of_release = request.form.get('year_of_release', "")
+        post.favourite_character = request.form.get('favourite_character', "")
+        
         db.session.commit()
         flash('Your post has been updated.')
         return redirect(url_for('post', post_id=post.id))
 
     return render_template('edit_post.html', title='Edit Post', post=post)
+
 
 @app.route('/post/delete/<int:post_id>', methods=['POST'])
 @login_required

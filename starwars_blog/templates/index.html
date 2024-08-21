@@ -11,6 +11,18 @@
             <div class="car-content">
                 <span class="card-title">{{ post.title }}</span>
                 <p>{{ post.body }}</p>
+                {% if post.film_name %}
+                    <p><strong>Film Name:</strong> {{ post.film_name }}</p>
+                {% endif %}
+                {% if post.film_num %}
+                    <p><strong>Film Number:</strong> {{ post.film_num }}</p>
+                {% endif %}
+                {% if post.year_of_release %}
+                    <p><strong>Year of Release:</strong> {{ post.year_of_release }}</p>
+                {% endif %}
+                {% if post.favourite_character %}
+                    <p><strong>Favourite Character:</strong> {{ post.favourite_character }}</p>
+            {% endif %}
                 <p>Posted by {{ post.user.username }} on {{ post.timestamp.strftime("%d-%m-%Y %H:%M") }}</p>
 
                 {% if current_user.is_authenticated and current_user.id == post.user.id %}

@@ -11,6 +11,22 @@
             <label for="body">Body</label>
             <textarea class="materialize-textarea" id="body" name="body" required>{{ post.body }}</textarea>
         </div>
+        <div class="input-field">
+            <input type="text" id="film_name" name="film_name" value="{{ post.film_name }}">
+            <label for="film_name" class="film_name">Film Name</label>
+        </div>
+        <div class="input-field">
+            <input type="number" id="film_num" name="film_num" value="{{ post.film_num }}">
+            <label for="film_num" class="film_num">Film Number</label>
+        </div>
+        <div class="input-field">
+            <input type="number" id="year_of_release" name="year_of_release" value="{{ post.year_of_release }}">
+            <label for="year_of_release" class="year_of_release">Year of Release</label>
+        </div>
+        <div class="input-field">
+            <input type="text" id="favourite_character" name="favourite_character" value="{{ post.favourite_character }}">
+            <label for="favourite_character" class="favourite_character">Favourite Character</label>
+        </div>
         <button type="submit" class="btn">Update Post</button>
     </form>
 {% endblock %}
