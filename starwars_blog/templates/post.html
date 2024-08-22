@@ -31,7 +31,7 @@
             </div>
             <div class="modal-footer">
                 <form method="POST" action="{{ url_for('delete_post', post_id=post.id) }}">
-                    <button type="submit" class="btn red">Delete</button>
+                    <button type="submit" class="btn red modal-del-btn">Delete</button>
                     <button type="button" class="modal-close btn">Cancel</button>
                 </form>
             </div>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="modal-footer">
                             <form method="POST" action="{{ url_for('delete_comment', comment_id=comment.id) }}">
-                                <button type="submit" class="btn red">Delete</button>
+                                <button type="submit" class="btn red modal-del-btn">Delete</button>
                                 <button type="button" class="modal-close btn">Cancel</button>
                             </form>
                         </div>

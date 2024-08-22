@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h2 class="signin-header">Sign In</h2>
+    <h2 class="signin-header">Sign in</h2>
     <form method="POST" action="{{ url_for('login') }}">
         <div class="input-field">
             <label for="login">Username or Email</label>
@@ -10,12 +10,14 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Input Password" required>
         </div>
-        <div class="input-field">
+        <div class="signinbtn">
+            <button type="submit" class="btn signin-btn">Sign In</button>
+        </div>
+        <div class="input-field remember-me">
             <label>
                 <input type="checkbox" id="remember-me" name="remember_me">
                 <span class="right" id="remember-me-text">Remember Me</span>
             </label>
         </div>
-        <button type="submit" class="btn signin-btn">Sign In</button>
     </form>
 {% endblock %}

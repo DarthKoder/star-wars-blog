@@ -1,0 +1,224 @@
+@import url('https://fonts.cdnfonts.com/css/star-wars');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Orbitron:wght@400..900&family=Teko:wght@300..700&display=swap');
+
+/* General Styles */
+body {
+    background-color: #000; 
+    color: #fff; 
+    font-family: 'Orbitron', sans-serif; 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Star Wars', sans-serif;
+    letter-spacing: 2px;
+}
+
+
+/* Navbar Styles */
+nav {
+    background-color: #111; 
+    box-shadow: 0 4px 2px -2px #444;
+}
+
+.nav-wrapper .brand-logo {
+    font-family: 'Star Wars', sans-serif;
+    color: #ff0000;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-left: 40px;
+}
+
+.brand-logo:hover {
+    color: #fff;
+}
+
+.nav-wrapper ul li a {
+    font-family: 'Orbitron', sans-serif;
+    color: #feda4a;
+}
+
+.sidenav-trigger i {
+    color: #feda4a;
+}
+
+/* Button Styles */
+.btn, .btn:hover, .btn-large, .btn-large:hover {
+    background-color: #feda4a; 
+    color: #000; 
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.create-post-btn {
+    background-color: #239400; 
+    color: #fff;
+}
+
+.create-post-btn:hover {
+    background-color: #fff; 
+    color: #239400;
+}
+
+.post-del-btn {
+    background-color: #ff0000; 
+    color: #fff;
+}
+
+.post-del-btn:hover {
+    color: #000000;
+}
+
+.comment-del-btn {
+    background-color: #ff0000; 
+    color: #fff;
+}
+
+.comment-del-btn:hover {
+    color: #000000;
+}
+
+.modal-del-btn {
+    background-color: #ff0000; 
+    color: #fff;
+}
+
+.modal-del-btn:hover {
+    color: #000000;
+}
+
+/* Card Styles */
+.card {
+    background-color: #222; 
+    border: 1px solid #444; 
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.card-title {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 1.5rem;
+    color: #ffe81f;
+}
+
+.card-content p, .card-content span {
+    font-family: 'Orbitron', sans-serif;
+    padding: 10px;
+}
+
+/* Form Styles */
+.input-field input[type="text"],
+.input-field input[type="email"],
+.input-field input[type="password"],
+.input-field textarea,
+.input-field input[type="number"] {
+    border-bottom: 1px solid #feda4a;
+    color: #fff;
+}
+
+.input-field input[type="text"]:focus,
+.input-field input[type="email"]:focus,
+.input-field input[type="password"]:focus,
+.input-field textarea:focus,
+.input-field input[type="number"]:focus {
+    border-bottom: 1px solid #ffe81f;
+    box-shadow: 0 1px 0 0 #ffe81f;
+}
+
+.input-field label {
+    color: #feda4a;
+}
+
+.input-field label.active {
+    color: #ffe81f;
+}
+
+.remember-me {
+    right: 10px;
+
+}
+
+/* Header Styles */
+.main-heading {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 40px;
+    color: #007bce;
+}
+
+.post-heading {
+    font-family: 'Star Wars', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 40px;
+    color: #007bce;
+}
+
+/* Modal Styles */
+.modal {
+    background-color: #111;
+    color: #feda4a;
+    border: 1px solid #444;
+    border-radius: 10px;
+}
+
+.modal .modal-content h4 {
+    font-family: 'Star Jedi', sans-serif;
+    font-size: 1.8rem;
+}
+
+.modal .modal-footer {
+    background-color: #6b6b6b; 
+    color: #ff0000;
+}
+.modal .modal-footer .modal-close {
+    background-color: #0c0c0c;
+    color: #ff0000;
+}
+
+.modal .modal-footer .modal-close:hover {
+    background-color: #0c0c0c;
+    color: #ffffff;
+}
+
+
+/* Miscellaneous */
+.container {
+    padding-top: 20px;
+}
+
+hr {
+    border-color: #444;
+    margin: 20px 0;
+}
+
+.comment-heading {
+    font-family: 'Star Jedi', sans-serif;
+    font-size: 1.8rem;
+    color: #ffe81f;
+}
+
+.comment-body {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+}
+
+.comment-details {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Footer Link Back to Discussion */
+.BTD-btn {
+    margin-top: 20px;
+    background-color: #ffe81f;
+    color: #000;
+}

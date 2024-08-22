@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 class="main-heading">Lets Talk About Star Wars!</h1>
+    <h1 class="main-heading">Lets Talk About Star Wars</h1>
 
     {% if current_user.is_authenticated %}
     <a href="{{ url_for('new_post') }}" class="btn create-post-btn">Create New Post</a>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="modal-footer">
                             <form method="POST" action="{{ url_for('delete_post', post_id=post.id) }}">
-                                <button type="submit" class="btn red">Delete</button>
+                                <button type="submit" class="btn red modal-del-btn">Delete</button>
                                 <button type="button" class="modal-close btn">Cancel</button>
                             </form>
                         </div>
