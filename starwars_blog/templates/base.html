@@ -22,13 +22,13 @@
             <ul class="right hide-on-med-and-down">
                 
                 {% if current_user.is_authenticated %}
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('new_post') }}">Create Post</a></li>
-                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <li><a class="nav-links" href="{{ url_for('index') }}">Home</a></li>
+                    <li><a class="nav-links" href="{{ url_for('new_post') }}">Create Post</a></li>
+                    <li><a class="nav-links" href="{{ url_for('logout') }}">Logout</a></li>
                 {% else %}
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>  
+                    <li><a class="nav-links" href="{{ url_for('index') }}">Home</a></li>
+                    <li><a class="nav-links" href="{{ url_for('login') }}">Login</a></li>
+                    <li><a class="nav-links" href="{{ url_for('register') }}">Register</a></li>  
                 {% endif %}
             </ul>
         </div>
@@ -36,13 +36,13 @@
 
     <ul class="sidenav" id="mobile-demo">
         {% if current_user.is_authenticated %}
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('new_post') }}">Create Post</a></li>
-            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            <li><a class="nav-links" href="{{ url_for('index') }}">Home</a></li>
+            <li><a class="nav-links" href="{{ url_for('new_post') }}">Create Post</a></li>
+            <li><a class="nav-links" href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a class="nav-links" href="{{ url_for('index') }}">Home</a></li>
+            <li><a class="nav-links" href="{{ url_for('login') }}">Login</a></li>
+            <li><a class="nav-links" href="{{ url_for('register') }}">Register</a></li>
         {% endif %}
     </ul>
 
