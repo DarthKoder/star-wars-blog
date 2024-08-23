@@ -82,12 +82,24 @@ nav {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.signin-btn {
+.register-btn,
+.signin-btn,
+.update-btn,
+.edit-post-btn,
+.post-submit,
+.submit-comment-btn,
+.BTD-btn {
     background-color: #feda4a; 
     color: #000; 
 }
 
-.signin-btn:hover {
+.register-btn:hover,
+.signin-btn:hover,
+.update-btn:hover,
+.edit-post-btn:hover,
+.post-submit:hover,
+.submit-comment-btn:hover,
+.BTD-btn:hover {
     background-color: #239400; 
     color: #fff; 
 }
@@ -262,11 +274,6 @@ hr {
 }
 
 /* Footer Link Back to Discussion */
-.BTD-btn {
-    margin-top: 20px;
-    background-color: #ffe81f;
-    color: #000;
-}
 
 .remember-me {
     right: 10px;
