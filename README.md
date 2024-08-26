@@ -205,7 +205,7 @@ See the Flowchart For the Schema here: ![Flow Chart - Star Wars Blog](/starwars_
     * This page will also show the 'Edit' and 'Delete' button on owned posts when the authenticated user is logged in.
     * It uses familliar fonts such as the "Star Wars" font and then "Orbitron", to give it more of a Star Wars feel and space like immersion.
     * It contains a reactive buttons to allow easy navigation to Create Post, Edit Post, Delete Post. This button also has a hover effect to let the user know the button can be activated.
-    * I have used colours associated with Star Wars such as sith red #ff0000, the famous Star Wars yellow #feda4a, Jedi green #239400, Jedi blue #007bce along with a contrasting white #fff, all on the space style black #000000. These colours are to help make the user feel immersed and really connect with the Star Wars theme. 
+    * I have used colours associated with Star Wars such as sith red #ff0000, the famous Star Wars yellow #feda4a, Jedi green #239400, Jedi blue #007bce along with a contrasting white #fff, all on the space style black #000000 and #222 for card contrast. These colours are to help make the user feel immersed and really connect with the Star Wars theme. 
     * There is a 'READ MORE' button which will take to to the full post screen witch has all the post information and comments related to that post.
 
     ![Main Homepage](/starwars_blog/static/img/star-wars-blog-index.png)
@@ -265,12 +265,12 @@ In the event of a page not found the error handler will render a page with a lin
 ## Design
 
  * Colour Scheme
-    * Primary colours used on the website: ![Color Scheme](/assets/img/sw-quiz-colour-scheme.png)
+    * Primary colours used on the website: ![Color Scheme](/starwars_blog/static/img/star-wars-blog-clour-palette.png)
 
  * Typography
-    * 'Orbitron' font is the main font used throughout the site with the addition of "Star Wars", "Teko" & "Jersery 10" for certain aspects. These all have sans-serif as its fallback font, in case the imported fonts dont load for any reason.
-    * The main logo uses the 'Orbitron' font while the edition for this particular edition is the "Star Wars" font, this will change with other editions to match the theme.
-    * "Teko" & "Jersey 10" have been used in the starting screen for the H2 and paragraphs respectively. 
+    * 'Orbitron' font is the main font used throughout the site with the addition of "Star Wars". These all have sans-serif as its fallback font, in case the imported fonts dont load for any reason.
+    * The main logo uses the 'Star Wars' font.
+    * "Star Wars" have been used in the page titles and "Orbitron" has been used for the paragraph text. 
 
  * Wireframes
     * Figma: Easy to create, uses and shares detailed images whilst also effective.
@@ -279,27 +279,17 @@ In the event of a page not found the error handler will render a page with a lin
 
 ## Bug fixes 
 
-* One issue I came across was that the "Next" button was not working when pressed. 
-   - After rigorous testing and trial and error, I realised that I have the button disabled and had to enable it by editing code and moving the diplayNextQuestion function to the top. 
+* One issue I came across was getting the optional post fields to display if filled out as thewy kept appearing as 'none'. 
+   - After rigorous testing and trial and error, I realised that I had the code for this in the wrong function in routes.py thjat was not saving the correct values to the post request handler and to also run if statements in the html. 
 
-* Another bug I had was that, while testing, I found that when I was going through the questions and it was surpassing the 10 question limit and had not end. 
-   - This was due having the code wrong for hiding the "Next" button and displaying the "Finish" button, which in turn,  never made it possible to end the game and bring up the results screen. 
+* Another bug I had was that, while testing, was the "Remember Me" check box was being ticked but not remembering the usernam on a page reload.
+   - This was due having the code wrong, so I implemented some javascript to take over and auto populate the field with the users username.
 
-* The biggest issue I had after testing the game cycle and finish button appearing, was that the game was only displaying 4 questions before initializing the "Finish" button. 
-   -	After console logging number of questions generated in the displayNextQuestion function, I have found that the start button was generating 2 questions(in the console log) then each time the next button was clicked it would generate another 2, then 4 etc . 
-   -	I searched through the code and after rigorous testing, figured out where I had gone wrong. 
-   -	I had "};" in the wrong place and had:
-   "disableAnswerButtons()"
-   "enableAnswerButtons()"
-   "checkAnswer()" functions 
-   and the code for: 
-   next button 
-   "Finish" button & "displayResults" all in the "displayNextQuestion()" function, which was called upon when the next button was clicked hence why it was displaying more and more questions once the game had started. 
-   -	I still at this point had the start button causing 2 questions to be generated before the game had actually started
-   -	After going through the code I realised that because I had the "displayNextQuestion()" function being called within the "startGame()" function and the "startGame()" function was called when the start button was clicked. This meant that the "displayNextQuestion" function was being called twice, once when the start button was clicked and again when the "startGame()" function was running.  
+* The biggest issue I had was trying to get postgresql and all the other dependencies to work together initially.
+   - I had to review alot of the versions and update and migrate alot after doing alot of research to get it all to function and connect.
 
-
-* I encountered a bug where the 
+* There were alot of minor code and syntax issues I faced but I m,anaged to research them and fix them along the way.
+   - I feel that I learned alot from these minor issues about coding with python and using the other dependencies and how they work. 
 
 ---
 
@@ -330,6 +320,8 @@ In the event of a page not found the error handler will render a page with a lin
     * Import main fonts the website.
  * [MaterializeCSS 1.0.0: A CSS framework for styling and responsiveness.](https://materializecss.com/)
     * Used for its helpful responsive layouts and components such as modals and sidenav.
+ * [Heroku](https://www.heroku.com/home)
+    * Used to deploy the website.
 
 ---
 
