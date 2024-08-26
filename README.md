@@ -275,7 +275,8 @@ In the event of a page not found the error handler will render a page with a lin
  * Wireframes
     * Figma: Easy to create, uses and shares detailed images whilst also effective.
     * Please find my wireframes here: [Figma: Star Wars Quiz Game](https://www.figma.com/design/eaYZirqx29lepICWkza2ik/SW-Quiz--Game?node-id=0%3A1&t=2xEmSDLvmOgxVaHC-1)
----
+
+- - -
 
 ## Bug fixes 
 
@@ -291,7 +292,7 @@ In the event of a page not found the error handler will render a page with a lin
 * There were alot of minor code and syntax issues I faced but I m,anaged to research them and fix them along the way.
    - I feel that I learned alot from these minor issues about coding with python and using the other dependencies and how they work. 
 
----
+- - -
 
 ## Technologies Used
 
@@ -305,7 +306,8 @@ In the event of a page not found the error handler will render a page with a lin
  * [Flask-Login: Used for handling user authentication.](https://flask-login.readthedocs.io/en/latest/)
  * [PostgreSQL: The relational database management system used to store data.](https://www.postgresql.org/)
  * [Jinja2: The templating engine used for rendering HTML](https://jinja.palletsprojects.com/en/3.1.x/)
----
+
+- - -
 
 ## Frameworks, Libraries & Programs Used
 
@@ -323,7 +325,7 @@ In the event of a page not found the error handler will render a page with a lin
  * [Heroku](https://www.heroku.com/home)
     * Used to deploy the website.
 
----
+- - -
 
 ## Testing
 
