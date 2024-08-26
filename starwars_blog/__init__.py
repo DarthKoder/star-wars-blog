@@ -1,4 +1,5 @@
 import os
+import env
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -21,9 +22,8 @@ def create_app():
 
     # Database URI configuration
     if os.environ.get("DEVELOPMENT") == "True":
-        app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
+        app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
     else:
-        # Fetch and update DATABASE_URL to use correct postgres scheme
         uri = os.environ.get("DATABASE_URL")
         if uri and uri.startswith("postgres://"):
             uri = uri.replace("postgres://", "postgresql://", 1)
