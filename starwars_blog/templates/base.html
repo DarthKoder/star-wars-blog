@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    <!-- Navabar -->
     <nav>
         <div class="nav-wrapper">
             <a href="{{ url_for('index') }}" class="brand-logo">Star Wars Discussion</a>
@@ -32,7 +32,7 @@
             </ul>
         </div>
     </nav>
-
+    <!-- Sidenav -->
     <ul class="sidenav" id="mobile-demo">
         {% if current_user.is_authenticated %}
             <li><a class="nav-links" href="{{ url_for('index') }}">Home</a></li>
