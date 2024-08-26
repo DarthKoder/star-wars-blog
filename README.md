@@ -274,7 +274,7 @@ In the event of a page not found the error handler will render a page with a lin
 
  * Wireframes
     * Figma: Easy to create, uses and shares detailed images whilst also effective.
-    * Please find my wireframes here: [Figma: Star Wars Quiz Game](https://www.figma.com/design/eaYZirqx29lepICWkza2ik/SW-Quiz--Game?node-id=0%3A1&t=2xEmSDLvmOgxVaHC-1)
+    * Please find my wireframes here: [Figma: Star-wars-blog](https://www.figma.com/design/v0S3A7Z9lYm8i7cmwbVV4X/Star-wars-blog?node-id=0-1&t=ZNw5ISooLO2AKF2b-1)
 
 - - -
 
