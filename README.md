@@ -342,7 +342,7 @@ The W3C Markup Validator and W3C CSS Validator services were used to validate ev
 <summary>index.html
 </summary>
 
-![Index.html validation result](/assets/img/index.html-validator-results.png)
+![Index.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
 </details>
 
 <details>
@@ -378,14 +378,35 @@ The W3C Markup Validator and W3C CSS Validator services were used to validate ev
 <summary>Home Page
 </summary>
 
-![Starting Screen Lighthouse Report (index.html)](/assets/img/star-wars-quiz-start-screen-lighthouse.png)
+![Homepage Screen Lighthouse Report (index.html)](/starwars_blog/static/img/Index.html-lighthouse-report.png)
 </details>
 
 <details>
-<summary>Home Page
+<summary>Create Post Page
 </summary>
 
-![Question Screen Lighthouse Report (index.html)](/assets/img/star-wars-quiz-questions-lighthouse.png)
+![Create Post Screen Lighthouse Report (index.html)](/starwars_blog/static/img/create-post-lighthouse-report.png)
+</details>
+
+<details>
+<summary>Edit Post Page
+</summary>
+
+![Edit Post Screen Lighthouse Report (index.html)](/starwars_blog/static/img/edit-post-lighthouse-report.png)
+</details>
+
+<details>
+<summary>Register Post Page
+</summary>
+
+![Register Screen Lighthouse Report (index.html)](/starwars_blog/static/img/register-lighthouse-report.png)
+</details>
+
+<details>
+<summary>Login Page
+</summary>
+
+![Login Screen Lighthouse Report (index.html)](/starwars_blog/static/img/login-lighthouse-report.png)
 </details>
 
 #### Mobile analysis
