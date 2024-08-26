@@ -261,6 +261,7 @@ In the event of a page not found the error handler will render a page with a lin
 * Email Notifications: Implement email notifications for comments and likes on posts.
 * Search Functionality: Users can search for specific posts by title or content.
 * Favorite Features: Users can mention their favorite movies, and scenes from Star Wars in their posts.
+* After running lighthouse rporets on the mobile side of things , the page heading has a large 'First Contentfull Paint' andslows performance, so I would look into improving this.
 
 ## Design
 
@@ -414,41 +415,85 @@ The W3C Markup Validator and W3C CSS Validator services were used to validate ev
 <summary>Home Page
 </summary>
 
-![Starting Screen Mobile Lighthouse Report (index.html)](/assets/img/sw-quiz-start-mobile-lighthouse.png)
+![Homepage Screen Lighthouse Report (index.html)](/starwars_blog/static/img/index-mobile-lighthouse-report.png)
 </details>
 
 <details>
-<summary>Home Page
+<summary>Create Post Page
 </summary>
 
-![Question Screen Mobile Lighthouse Report (index.html)](/assets/img/sw-quiz-question-mobile-lighthouse.png)
+![Create Post Screen Lighthouse Report (index.html)](/starwars_blog/static/img/create-post-mobile-lighthouse-report.png)
+</details>
+
+<details>
+<summary>Edit Post Page
+</summary>
+
+![Edit Post Screen Lighthouse Report (index.html)](/starwars_blog/static/img/edit-post-mobile-lighthouse-report.png)
+</details>
+
+<details>
+<summary>Register Post Page
+</summary>
+
+![Register Screen Lighthouse Report (index.html)](/starwars_blog/static/img/register-mobile-lighthouse-report.png)
+</details>
+
+<details>
+<summary>Login Page
+</summary>
+
+![Login Screen Lighthouse Report (index.html)](/starwars_blog/static/img/login-mobile-lighthouse-report.png)
 </details>
 
 ---
 
 ## Deployment and local development
 
+### Heroku
+
+To deploy to Heroku:
+1. In GitPod CLI, the root directory of the project, run:
+    pip3 freeze --local > requirements.txt
+    to create a requirements.txt file containing project dependencies.
+2. In the Gitpod project workspace root directory, create a new file called Procfile, with capital 'P'.
+    Open the Procfile. Inside the file, check that web: python3 app.py has been added when creating the file
+    Save the file.
+3. Push the 2 new files to the GitHub repository
+4. Login to Heroku, select Create new app, add the name for your app and choose your closest region.
+5. Navigate to the Deploy tab on Heroku dashboard and select Github, search for your repository and click 'connect'.
+6. Navigate to the settings tab, click reveal config vars and input the following:
+
+| Key | Value |
+| :---: | :---: |
+| DATABASE_URL | postgresql |
+| IP | 0.0.0.0 |
+| PORT | 5000 |
+| SECRET_KEY | mysecretkey |
+
+Actual Enviroment variables not disclosed for security.
+
 ### GitHub Pages
 
 GitHub Pages used to deploy live version of the website.
-1. Log in to GitHub and locate [GitHub Repository Hunter Kitchen Design](https://github.com/DarthKoder/Star-Wars-Question-Raider)
+1. Log in to GitHub and locate [GitHub Repository Star Wars Discussion Blog](https://github.com/DarthKoder/star-wars-blog)
 2. At the top of the Repository(not the main navigation) locate "Settings" button on the menu.
 3. Scroll down the Settings page until you locate "GitHub Pages".
 4. Under "Source", click the dropdown menu "None" and select "Main" and click "Save".
 5. The page will automatically refresh.
-6. Scroll back to locate the now-published site [link](https://github.com/DarthKoder/Star-Wars-Question-Raider) in the "GitHub Pages" section.
+6. Scroll back to locate the now-published site [link](https://darthkoder.github.io/star-wars-blog/) in the "GitHub Pages" section.
 
 ### Forking the GitHub Repository
 
 By forking the repository, we make a copy of the original repository on our GitHub account to view and change without affecting the original repository by using these steps:
 
-1. Log in to GitHub and locate [GitHub Repository Star Wars Question Raider](https://github.com/DarthKoder/Star-Wars-Question-Raider)
+1. Log in to GitHub and locate [GitHub Repository Star Wars Discussion Blog](https://github.com/DarthKoder/star-wars-blog)
 2. At the top of the Repository(under the main navigation) locate "Fork" button.
 3. Now you should have a copy of the original repository in your GitHub account.
 
 ### Local Clone
 
-1. Log in to GitHub and locate [GitHub Repository Star Wars Question Raider](https://github.com/DarthKoder/Star-Wars-Question-Raider)
+1. Log in to GitHub and locate [GitHub Repository Star Wars Discussion Blog](https://github.com/DarthKoder/star-wars-blog)
 2. Under the repository name click "Clone or download"
 3. Click on the code button, select clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open Git Bash
