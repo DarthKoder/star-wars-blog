@@ -16,6 +16,15 @@ All users will need to go through a registration process before they can partici
 ### [User Experience (UX)](#user-experience-ux-1)
 * [Rationale](#rationale-1)
 * [User Stories](#user-stories)
+### [Database Schema](#database-schema)
+* [User Table](#user-table)
+* [Post Table](#post-table)
+* [Comment Table](#comment-table)
+### [CRUD Functionality](#crud-functionality)
+* [Create](#create)
+* [Read](#read)
+* [Update](#update)
+* [Delete](#delete)
 ### [Features](#features)
 * [Existing Features](#existing-features)
 ### [Features Left to Implement](#features-left-to-implement-1)
@@ -79,7 +88,7 @@ To help inspire the user and bring them into the Star Wars universe for their ex
 * Post: Stores blog posts created by users.
 * Comment: Stores comments on blog posts.
 
-See the Flowchart For the Schema here: ![Flow Chart - Star Wars Blog](//starwars_blog/static/img/starwars_blog%20schema%20flowchart.png)
+See the Flowchart For the Schema here: ![Flow Chart - Star Wars Blog](/starwars_blog/static/img/starwars-blog-schema-flowchart.png)
 
 ### User Table
 
@@ -110,6 +119,30 @@ See the Flowchart For the Schema here: ![Flow Chart - Star Wars Blog](//starwars
 
 - - -
 
+## CRUD Functionality
+
+### Create
+   * Create a user profile by registering      
+   * Once logged in, Create posts and comments      
+
+### Read
+   * Read usernames for password check
+   * Read username to check if user exists
+   * Read posts created by yourself and others
+   * Read comments created by yourself and others      
+   * Read information an all posts such as user crteated, timstamps and the optional features         
+
+### Update
+   * 'Remember me' functionality
+   * Functionality to edit owned posts 
+   * Functionality to update posts with comments
+
+### Delete
+   * Functionality to delete owned posts
+   * Functionality to delete owned comments
+
+- - - 
+
 ## Features
 
 * Genre Based: This website is targeting people who interested in Star Wars.
@@ -129,79 +162,96 @@ See the Flowchart For the Schema here: ![Flow Chart - Star Wars Blog](//starwars
     * This is the websites logo to show what it is all about and can be seen as constant throught the game and series.
     * I have used the Star Wars sith red #ff0000 for the logo which turns white #fff when hovered over.
 
-    ![Game Title](assets/img/sw-quiz-title.png)
+    ![Site Title/Logo](/starwars_blog/static/img/starwars-blog-logo.png)
 
-* Starting Screen
-    * It is the opening screen to the game.
-    * This has the game title and series edition to show what the game is about (this is the same throughout all screens).
-    * It uses familliar fonts such as the "Star Wars" font and then "Orbitron", "Teko" & "Jersey 10" to give it more of a Star Wars feel and space like immersion.
-    * This has a name input fiel with a min/max charcter requirement that must be filled out in able to start the game.
-    * The name input will be called in the results screen to bring a personalised experience for the user.
-    * It contains a reactive button to allow easy navigation to start the game, with an enticing prompt of "Begin The Trials", which is to be clicked to start the game. This button also has a hover effect to let the user know the button can be activated.
-    * I have used colours associated with Star Wars such as sith red #a80000, the famous Star Wars yellow #ffbf50, Jedi green, Jedi blue #2b5a99 along with a contrasting pale, light #fafafa, all on the space style black #000000. These colours are to help make the user feel immersed and really connect with the Star Wars theme. 
+* Navbar & Sidenav Logo
+    * This is the websites navbar to be used for navigation around the site, When on mobile it will be a sidebar.
+    * I have used the Star Wars jedi blue #007bce for this that turn Star Wars Yerllow #feda4a when hovered over.
+    * When NOT logged in, the navbar/sidebar will show the options 'Home', 'Login', 'Register' which will take you to the associated pages.
+    * When logged in, the navbar/sidebar will show the options 'Home', 'Create Post', 'Logout' which will take you to the associated pages or log the user out.
+    * The sidebar will have a menu icon on the top left hand side of the screen when on a mobile device.
 
-    ![Starting Screen](assets/img/star-wars-quiz-game-start-screen.png)
+    ![Navbar](/starwars_blog/static/img/star-wars-blog-navbar.png)
 
-* Question Screen 
-    * The Question Screen is the screen that come after clicking the "Begin The Trials" start button.
-    * It has the game title along with the series edition.
-    * This is where the question and multiple choice questions will appear for the user to see and pick from.
+    ![Sidebar](/starwars_blog/static/img/star-wars-blog-sidebar.png)
 
+    ![Sidebar Icon](/starwars_blog/static/img/star-wars-blog-sidebar-icon.png)
 
-    ![Question Screen](assets/img/star-wars-quiz-question-screen.png)
-
-    * The questions that appear will be randomised and shall not repeat any question in one game. 
-    * Depending on the users answer/input, the question choice clicked will highlight green if correct and red if incorrect. If incorrect the correct answer will also highlight green to help the user understand where they went wrong. 
-    * Once an answer/input has been given, the question buttons will be disabled to stop the user from changing their answers.
-    * The question is using the "Star Wars" font in the Jedi blue colour.
-    * The multiple choice questions each appear in an oblong box with a white background with black "Orbitron" font and a Star Wars yellow border.
-    * The question buttons are also reactive and the background turns yellow when hovered over.
-
-    ![Question Hover](assets/img/sw-quiz-question-hover.png)
-
-    ![Question Screen Correct](assets/img/sw-quiz-correct-question.png)
-
-    ![Question Screen Incorrect](assets/img/sw-quiz-incorrect-question.png)
-
-    * If the question number is below 10, the answer/input has been given and the answer has been checked and highlighted correct or incorrect, a "Next" button will appear to move forward to the next question.
-    * If the question number is at 10, the answer/input has been given and the answer has been checked and highlighted correct or incorrect, a "Finish" button will appear to end the game and bring up the results modal.
-    * These buttons will also be reactive and change the background colour when hovered over.
-
-    ![Question Screen Next Button Hover](assets/img/sw-quiz-next-btn.png)
-
-    ![Question Screen Next Button Hover](assets/img/sw-quiz-next-btn-hover.png)
-
-    ![Question Screen Finish Button](assets/img/sw-quiz-finish-btn.png)
-
-    ![Question Screen Finish Button Hover](assets/img/sw-quiz-finish-btn-hover.png)
+* Register Screen 
+    * The Register Screen is the screen that come after clicking the "Register" button on the navbar/sidenav.
+    * It has a form to fill out to create a username and password along with your email address.
+    * This is where the user will add their information to the database and create their profile.
+    * This will allow the user to login and create posts and comment on posts.
+    * There is a reactive button that will submit the form when complete, this has a hover function to help with UX.
+    * You will recieve a flash message at the top of the screen when successfully registered.
 
 
-* Results Screen
-    * The results screen is a pop up modal that appears after the user has completed 10 questions and then presses the "Finish" button. 
-    * I have used the "Orbitron" font for this, which is consistant with the theme and the rest of the game. 
-    * This is a modal pop up box that has a title section, body section and a footer section. 
-    * The title section has a the title "Completed The Questions, You Have!" to let the user know they have completed taking the quiz. 
-       - This has a black background with the yellow font #ffbf50. 
-    * The modals body section contains the score results for the user, a message that changes depending on the score you have (there are 3 variables) and then some text asking the user if they would like to play again. 
-       - This has a light #fafafa background 
-       - The results score text is large and red #a80000 to stand out
-       - The message text is black of colour
-       - The "Would you like to play again?" text is in jedi green.
-       - I have made these different colours to stand out and make it clear that they are different sections of the body.
-    * The footer contains two buttons, one to close the modal and the other to play again and take the user back to the starting screen. 
-       - Both buttons have the original button layout with black background and white text with a red border.
-       - The close button when hovered over has the background turn red like the other buttons in the game.
-       The play again button when hovered over, turns green to help signify the green light to play again. 
-    * The results modal is designed to give a rewarding feel with a personal message to the player and also give the determionation to get better.
-    * It is intuitive and informative at the same time.
+    ![Register Screen](/starwars_blog/static/img/star-wars-blog-register.png)
 
-![Results Screen](assets/img/sw-quiz-result-modal.png)
+* Login Screen 
+    * The Login Screen is the screen that come after clicking the "Login" button on the navbar/sidenav.
+    * It has a form to fill out with a username/email and password.
+    * This is where the user will authenticate their information with the database and login to their profile.
+    * This will allow the user to create posts and comment on posts.
+    * There is a reactive button that will submit the form when complete, this has a hover function to help with UX.
+    * There is a 'Remember Me' checkbox also which will remember the users username and automatically populate it if the page is reloaded.
 
-![Results Screen Close Hover](assets//img/sw-quiz-result-modal-close-hover.png)
 
-![Results Screen Play Again Hover](assets/img/sw-quiz-result-modal-play-again-hover.png)
+    ![Login Screen](/starwars_blog/static/img/star-wars-blog-login.png)
 
----
+* Main Homepage
+    * It is the opening screen to the site.
+    * This has the Navbar, Site logo, Page Heading, User Posts & Comments along with the 'Create Post' button.
+    * This page will also show the 'Edit' and 'Delete' button on owned posts when the authenticated user is logged in.
+    * It uses familliar fonts such as the "Star Wars" font and then "Orbitron", to give it more of a Star Wars feel and space like immersion.
+    * It contains a reactive buttons to allow easy navigation to Create Post, Edit Post, Delete Post. This button also has a hover effect to let the user know the button can be activated.
+    * I have used colours associated with Star Wars such as sith red #ff0000, the famous Star Wars yellow #feda4a, Jedi green #239400, Jedi blue #007bce along with a contrasting white #fff, all on the space style black #000000. These colours are to help make the user feel immersed and really connect with the Star Wars theme. 
+    * There is a 'READ MORE' button which will take to to the full post screen witch has all the post information and comments related to that post.
+
+    ![Main Homepage](/starwars_blog/static/img/star-wars-blog-index.png)
+
+* Post Screen 
+    * The Post Screen is the screen that come after clicking the "READ MORE" button on the posts on the homepage/index.
+    * It will show the post title, post description and all of the filled out optional fields, timestamp, comments.
+    * If logged in you will see the option to comment, otherwise it will ask you to login to comment.
+    * If logged in and you own the post it will show you the 'Edit Post', 'Delete Post' and 'Delete Comment' buttons, these are all reactive buttons when hovered over.
+
+    ![Post Screen](/starwars_blog/static/img/star-wars-blog-post.png)
+
+* Edit Post Screen 
+    * The Edit Post Screen is the screen that come after clicking the "Edit Post" button on an owned post on the homepage/index when logged in.
+    * It will show the post title, post description and all of the filled out optional fields, timestamp that can all be edited.
+    * There will be an 'Update Post' button which will submit the changes, you will recieve a flash message at the top of the screen when successfully updated.
+    
+
+    ![Edit Post Screen](/starwars_blog/static/img/star-wars-blog-edit-post.png)
+
+    ![Edit Post Success Message](/starwars_blog/static/img/star-wars-blog-edit-success-msg.png)
+
+* Delete Post/Comment Screen 
+    * The Delete Edit Post Screen is the screen that come after clicking the "Delete Post" button on an owned post on the homepage/index when logged in.
+    * Once clicked, the button will initiate a pop up modal that will ask for confirmation of the deletion.
+    * You will recieve a flash message at the top of the screen when successfully deleted.
+    * This is the same scenario for comment deletion.
+    
+
+    ![Delete Button](/starwars_blog/static/img/star-wars-delete-btn.png)
+
+    ![Delete Post/Comment Screen](/starwars_blog/static/img/star-wars-blog-post.png)
+
+    ![Delete Post Modal](/starwars_blog/static/img/star-wars-blog-delete-post-modal.png)
+
+    ![Delete Message](/starwars_blog/static/img/star-wars-blog-delete-msg.png)
+
+- - -
+
+## Error Pages
+
+### 404 Page
+
+In the event of a page not found the error handler will render a page with a link back to the homepage.
+
+- - -
 
 ## Features Left to Implement
 
