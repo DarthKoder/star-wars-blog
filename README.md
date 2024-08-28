@@ -8,9 +8,9 @@ Anybody can access it, register by creating an account and login to start discus
 
 All users will need to go through a registration process before they can participate. They will the need to login with a authenticated user profile to either post or comment, they will also be able to edit or delete any post they themselves have created.
 
-![Narth Vaders Question Raiders | Star Wars Edition](/assets/img/star-wars-quiz-game-start-screen.png)
+![Star Wars Discussion Blog](/starwars_blog/static/img/star-wars-blog-index.png)
  
-[View Narth Vaders Question Raiders | Star Wars Edition project here](https://github.com/DarthKoder/Star-Wars-Question-Raider)
+[View Star Wars Discussion Blog project here](https://github.com/DarthKoder/star-wars-blog)
 - - -
 ## Table of Contents
 ### [User Experience (UX)](#user-experience-ux-1)
@@ -79,6 +79,20 @@ To help inspire the user and bring them into the Star Wars universe for their ex
     * Review any updates to their own or others posts.
     
 - - -
+
+## Design
+
+ * Colour Scheme
+    * Primary colours used on the website: ![Color Scheme](/starwars_blog/static/img/star-wars-blog-clour-palette.png)
+
+ * Typography
+    * 'Orbitron' font is the main font used throughout the site with the addition of "Star Wars". These all have sans-serif as its fallback font, in case the imported fonts dont load for any reason.
+    * The main logo uses the 'Star Wars' font.
+    * "Star Wars" have been used in the page titles and "Orbitron" has been used for the paragraph text. 
+
+ * Wireframes
+    * Figma: Easy to create, uses and shares detailed images whilst also effective.
+    * Please find my wireframes here: [Figma: Star-wars-blog](https://www.figma.com/design/v0S3A7Z9lYm8i7cmwbVV4X/Star-wars-blog?node-id=0-1&t=ZNw5ISooLO2AKF2b-1)
 
 ## Database Schema
 
@@ -245,14 +259,6 @@ See the Flowchart For the Schema here: ![Flow Chart - Star Wars Blog](/starwars_
 
 - - -
 
-## Error Pages
-
-### 404 Page
-
-In the event of a page not found the error handler will render a page with a link back to the homepage.
-
-- - -
-
 ## Features Left to Implement
 
 * Like/Dislike System: Implement a feature to like or dislike posts and comments.
@@ -263,19 +269,13 @@ In the event of a page not found the error handler will render a page with a lin
 * Favorite Features: Users can mention their favorite movies, and scenes from Star Wars in their posts.
 * After running lighthouse rporets on the mobile side of things , the page heading has a large 'First Contentfull Paint' andslows performance, so I would look into improving this.
 
-## Design
+- - -
 
- * Colour Scheme
-    * Primary colours used on the website: ![Color Scheme](/starwars_blog/static/img/star-wars-blog-clour-palette.png)
+## Error Pages
 
- * Typography
-    * 'Orbitron' font is the main font used throughout the site with the addition of "Star Wars". These all have sans-serif as its fallback font, in case the imported fonts dont load for any reason.
-    * The main logo uses the 'Star Wars' font.
-    * "Star Wars" have been used in the page titles and "Orbitron" has been used for the paragraph text. 
+### 404 Page
 
- * Wireframes
-    * Figma: Easy to create, uses and shares detailed images whilst also effective.
-    * Please find my wireframes here: [Figma: Star-wars-blog](https://www.figma.com/design/v0S3A7Z9lYm8i7cmwbVV4X/Star-wars-blog?node-id=0-1&t=ZNw5ISooLO2AKF2b-1)
+In the event of a page not found the error handler will render a page with a link back to the homepage.
 
 - - -
 
@@ -330,7 +330,9 @@ In the event of a page not found the error handler will render a page with a lin
 
 ## Testing
 
-All Python files have been put throuth the CI Python Linter to ensure it is PEP8 compliant and none have any errors and are all clear.
+All Python files have been run through the CI Python Linter to ensure it is PEP8 compliant, all are clear with no errors.
+
+All JavaScript files have been run through JShint and have no errors using jshint esversion: 6.
 
 The W3C Markup Validator and W3C CSS Validator services were used to validate every page of the project, to ensure there were no errors.
 
@@ -360,7 +362,7 @@ The W3C Markup Validator and W3C CSS Validator services were used to validate ev
 <summary>style.css
 </summary>
 
-![JavaScript validation result](/assets/img/)
+![JavaScript validation result](/starwars_blog/static/img/starwars-blog-jshint-report.png)
 </details>
 
 ### Manual Testing
