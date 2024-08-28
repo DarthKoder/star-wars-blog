@@ -9,13 +9,14 @@ db = SQLAlchemy()
 migrate = Migrate()
 login = LoginManager()
 
+
 def create_app():
     app = Flask(__name__)
 
     # Load environment variables if env.py exists
     if os.path.exists("env.py"):
         import env
-        
+
     # Set the secret key for session management
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
@@ -37,6 +38,5 @@ def create_app():
     # Import routes and models to ensure they are registered with the app
     with app.app_context():
         from starwars_blog import routes, models
-        
 
     return app

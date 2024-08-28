@@ -330,12 +330,15 @@ In the event of a page not found the error handler will render a page with a lin
 
 ## Testing
 
+All Python files have been put throuth the CI Python Linter to ensure it is PEP8 compliant and none have any errors and are all clear.
+
 The W3C Markup Validator and W3C CSS Validator services were used to validate every page of the project, to ensure there were no errors.
 
  * [W3C Markup Validtor](https://validator.w3.org/)
  * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
  * [JS Lint](https://www.jslint.com/)
  * [JS Hint](https://www.jshint.com/)
+ * [CI Python Linter PEP8](https://pep8ci.herokuapp.com/#)
 
 ### Validation results
 
