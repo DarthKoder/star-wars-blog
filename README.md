@@ -508,6 +508,8 @@ By forking the repository, we make a copy of the original repository on our GitH
 ### Code
  * Understanding some JavaScript concepts and code needed for certail aspects of the game [W3schools](https://www.w3schools.com/)
  * The README template was helpfully provided by my mentor Mitko at Code Institute [Lunar-Escape](https://github.com/Thomas-Tomo/Lunar-Escape)
+ * Helping with writing and understanding python [Python Tutor](https://pythontutor.com/)
+ * Helping with writing and understanding python and find code that was helpful to me [Python Docs](https://docs.python.org/3/contents.html)
 
 ### Content
 
@@ -516,12 +518,13 @@ By forking the repository, we make a copy of the original repository on our GitH
 
 ### Media 
 
- * [Pexels](https://www.pexels.com/) free stock photos & videos, royalty free images & videos.
+All Media used in the site and README is original.
 
 ---
 
 ## Acknowledgements
- * My mentor Mitko for helping me with ideas for the game and ways to build it. 
- * W3schools for the information online needed to help me build this game. 
+ * My mentor Mitko for helping me with ideas to improve the design and ways to build it. 
+ * W3schools for the information online when needed. 
+ * Python Tutor to help me write and understand python and debug any issues.
  * Slack community for encouragement and information.
  * My motivation for this project was my love for Star Wars and wanted to build something for the community. 
