@@ -38,11 +38,5 @@ def create_app():
     with app.app_context():
         from starwars_blog import routes, models
         
-    
-    @app.cli.command("create-db")
-    def create_db():
-        """Create the database tables."""
-        db.create_all()
-        print("Database tables created.")
 
     return app
