@@ -376,6 +376,7 @@ The W3C Markup Validator and W3C CSS Validator services were used to validate ev
 * Dev Tools was used to test how the site looks on various screen sizes.
 * Dev Tools Lighthouse was use to test the performance accessibility, best prectices and SEO of each page.
 * JS Lint was used to ensure there are no major issues with the script.
+ADD MORE TEST CASES 
 
 ### Lighthouse Report
 
