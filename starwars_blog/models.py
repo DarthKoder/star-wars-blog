@@ -16,7 +16,7 @@ class User(UserMixin, db.Model):
 
     def set_password(self, password):
         # This is to set the user's password hash
-        self.password_hash = generate_password_hash(password)
+        self.password_hash = generate_password_hash(password, method='sha256')
 
     def check_password(self, password):
         # This will check if the provided password matches the stored password hash
