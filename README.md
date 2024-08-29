@@ -363,6 +363,13 @@ The W3C Markup Validator and W3C CSS Validator services were used to validate ev
 ### Validation results
 
 <details>
+<summary>base.html
+</summary>
+
+![Base.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
+</details>
+
+<details>
 <summary>index.html
 </summary>
 
@@ -370,17 +377,80 @@ The W3C Markup Validator and W3C CSS Validator services were used to validate ev
 </details>
 
 <details>
-<summary>style.css
+<summary>register.html
 </summary>
 
-![CSS validation result](/assets/img/sw-quiz-css-validator-results.png)
+![Register.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
+</details>
+
+<details>
+<summary>login.html
+</summary>
+
+![Login.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
+</details>
+
+<details>
+<summary>create_post.html
+</summary>
+
+![Create_post.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
+</details>
+
+<details>
+<summary>edit_post.html
+</summary>
+
+![Edit_post.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
+</details>
+
+<details>
+<summary>post.html
+</summary>
+
+![Post.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
 </details>
 
 <details>
 <summary>style.css
 </summary>
 
+![CSS validation result](/starwars_blog/static/img/starwars-blog-css-validation.png)
+</details>
+
+<details>
+<summary>script.js
+</summary>
+
 ![JavaScript validation result](/starwars_blog/static/img/starwars-blog-jshint-report.png)
+</details>
+
+<details>
+<summary>models.py
+</summary>
+
+![Models.py validation result](/starwars_blog/static/img/models.py-validation-starwars-blog.png)
+</details>
+
+<details>
+<summary>routes.py
+</summary>
+
+![Routes.py validation result](/starwars_blog/static/img/routes.py-validation-starwars-blog.png)
+</details>
+
+<details>
+<summary>__init____.py
+</summary>
+
+![__init____.py validation result](/starwars_blog/static/img/init.py-validation-starwars-blog.png)
+</details>
+
+<details>
+<summary>run.py
+</summary>
+
+![Run.py validation result](/starwars_blog/static/img/run.py-validation-starwars-blog.png)
 </details>
 
 ### Manual Testing
