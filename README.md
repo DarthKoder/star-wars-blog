@@ -363,52 +363,52 @@ The W3C Markup Validator and W3C CSS Validator services were used to validate ev
 ### Validation results
 
 <details>
-<summary>base.html
-</summary>
-
-![Base.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
-</details>
-
-<details>
 <summary>index.html
 </summary>
 
-![Index.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
+![Index.html validation result](/starwars_blog/static/img/index.html-validation-starwars-blog.png)
 </details>
 
 <details>
 <summary>register.html
 </summary>
 
-![Register.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
+![Register.html validation result](/starwars_blog/static/img/register.html-validation-starwars=blog.png)
 </details>
 
 <details>
 <summary>login.html
 </summary>
 
-![Login.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
+![Login.html validation result](/starwars_blog/static/img/login.html-validation-starwars-blog.png)
 </details>
 
 <details>
 <summary>create_post.html
 </summary>
 
-![Create_post.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
+![Create_post.html validation result](/starwars_blog/static/img/create_post.html-validation-starwars-blog.png)
 </details>
 
 <details>
 <summary>edit_post.html
 </summary>
 
-![Edit_post.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
+![Edit_post.html validation result](/starwars_blog/static/img/edit_post.html-validation-starwars-blog.png)
 </details>
 
 <details>
 <summary>post.html
 </summary>
 
-![Post.html validation result](/starwars_blog/static/img/Index.html-lighthouse-report.png)
+![Post.html validation result](/starwars_blog/static/img/edit_post.html-validation-starwars-blog.png)
+</details>
+
+<details>
+<summary>modal
+</summary>
+
+![Modal validation result](/starwars_blog/static/img/modal-validation-starwars-blog.png)
 </details>
 
 <details>
