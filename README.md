@@ -65,6 +65,7 @@ To help inspire the user and bring them into the Star Wars universe for their ex
     * Bring pleasure to the user with familiar Star Wars immersion.
     * Easily navigate throughout the site.
     * Be able to complete registration and login easily with the intuitive design.
+    * Be able to view the site on any device.
     
  * Returning visitor goals
     * Be able to have variety with other peoples posts/comments of thoughts and opinions.
@@ -244,7 +245,7 @@ See the Flowchart For the Schema here: ![Flow Chart - Star Wars Blog](/starwars_
 
 * Delete Post/Comment Screen 
     * The Delete Edit Post Screen is the screen that come after clicking the "Delete Post" button on an owned post on the homepage/index when logged in.
-    * Once clicked, the button will initiate a pop up modal that will ask for confirmation of the deletion.
+    * Once clicked, the button will initiate a pop up modal that will ask for confirmation of the deletion - this modal is a component from Materialize.
     * You will recieve a flash message at the top of the screen when successfully deleted.
     * This is the same scenario for comment deletion.
     
@@ -277,6 +278,8 @@ See the Flowchart For the Schema here: ![Flow Chart - Star Wars Blog](/starwars_
 
 In the event of a page not found the error handler will render a page with a link back to the homepage.
 
+![404 Error Page](/starwars_blog/static/img/star-wars-blog-404-page.png)
+
 - - -
 
 ## Bug fixes 
@@ -307,6 +310,21 @@ In the event of a page not found the error handler will render a page with a lin
  * [Flask-Login: Used for handling user authentication.](https://flask-login.readthedocs.io/en/latest/)
  * [PostgreSQL: The relational database management system used to store data.](https://www.postgresql.org/)
  * [Jinja2: The templating engine used for rendering HTML](https://jinja.palletsprojects.com/en/3.1.x/)
+ *  Python modules used:  
+      *  alembic==1.13.2
+      *  blinker==1.8.2
+      *  click==8.0.1
+      *  Flask==2.0.1
+      *  Flask-Login==0.6.3
+      *  Flask-Migrate==4.0.7
+      *  Flask-SQLAlchemy==2.5.1
+      *  greenlet==3.0.3
+      *  itsdangerous==2.0.1
+      *  Mako==1.3.5
+      *  psycopg2-binary==2.9.9
+      *  python-dotenv==1.0.1
+      *  SQLAlchemy==1.4.18
+      *  Werkzeug==2.2.2
 
 - - -
 
@@ -376,7 +394,47 @@ The W3C Markup Validator and W3C CSS Validator services were used to validate ev
 * Dev Tools was used to test how the site looks on various screen sizes.
 * Dev Tools Lighthouse was use to test the performance accessibility, best prectices and SEO of each page.
 * JS Lint was used to ensure there are no major issues with the script.
-ADD MORE TEST CASES 
+
+
+| Feature/Test                                          | Expected Outcome.                                                                                                        | Result |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------ |
+| Logo in Navbar.                                       | Redirect to Homepage.                                                                                                    | Pass.  |
+| Nav Links.                                            | Redirect to relevant pages.                                                                                              | Pass.  |
+| Side Nav                                              | Navbar collapes to Sidenav on mobile devices with correct links.                                                         | Pass.  |
+| CTA Login button on Homepage.                         | Redirects to login page.                                                                                                 | Pass.  |
+| Create Post Button                                    | Opens correct create_post.html                                                                                           | Pass.  |
+| Login Form - empty.                                   | Will not submit if empty fields.                                                                                         | Pass.  |
+| Login Form - incorrect username.                      | Form submits but doesn't login, gives falsh message.                                                                     | Pass.  |
+| Login Form - incorrect password.                      | Form submits but doesn't login, gives falsh message.                                                                     | Pass.  |
+| Login Form - correct details.                         | Form submits and redirects user to relevant page for that user.                                                          | Pass.  |
+| Register link on Log In Form.                         | Redirects to register page.                                                                                              | Pass.  |
+| Register Form - empty.                                | Will not submit if empty fields.                                                                                         | Pass.  |
+| Register Form - username exists.                      | Form submits but does not register user, error page with username already exists.                                        | Pass.  |
+| Register Form - new user details.                     | Form submits adding new user and redirects to Homepage with flash message.                                               | Pass.  |
+| Log In link on Register Form.                         | Redirects to Log In page.                                                                                                | Pass.  |
+| Log Out Button.                                       | Logs user out, clears session and redirects to Homepage.                                                                 | Pass.  |
+| Remember Me.                                          | Remember me checkbox remembers the users username when the page is refreshed.                                            | Pass.  |
+| See Full Post CTA.                                    | Redirects to full post.html of specific post.                                                                            | Pass.  |
+| Post Fields.                                          | All post fields can be filled out.                                                                                       | Pass.  |
+| Post Required Fields - No Completed.                  | Will not submit if required fields are empty.                                                                            | Pass.  |
+| Post Submit CTA Button.                               | Submit button works , post successfully posted with flash message.                                                       | Pass.  |
+| Post Edit CTA Button Visibility.                      | Post Owner Only Can See Edit CTA Button.                                                                                 | Pass.  |
+| Post Edit CTA Button - Functions.                     | Post owner can use button and takes them to the edit_post.html and are able to edit all post information.                | Pass.  |
+| Post Edit Submit CTA Button.                          | Once edited , the post owner can submit the post and recieve a flash message of successful post.                         | Pass.  |
+| Post Delete CTA Button Visibility.                    | Post Owner Only Can See Delete CTA Button.                                                                               | Pass.  |
+| Post Delete CTA Button - Functions.                   | Post owner can use button and executes the modal pop up for confirmation.                                                | Pass.  |
+| Comment Visibility.                                   | Comments are visible to users who clicked on specific post.                                                              | Pass.  |
+| Comment Posting - User Not Logged In.                 | Comments are visible to users but will be prompted to login to add a comment.                                            | Pass.  |
+| Comment Posting - User Logged In.                     | Comments are visible and user can add a comment.                                                                         | Pass.  |
+| Comment Posting - Texr Field.                         | Comment text field works as expected.                                                                                    | Pass.  |
+| Comment Posting - Submit CTA button.                  | Comments are successfully posted if user is logged in and required fields are completed, flash message when complete.    | Pass.  |
+| Comment Delete CTA Button - Functions.                | Comment owner can use button and executes the modal pop up for confirmation.                                             | Pass.  |
+| Delete Modal.                                         | Delete button successfully deletes post/comment with flash message of confirmation, cancel button removes the modal.     | Pass.  |
+| Back To Discussion CTA Button.                        | Redirects to hompage.                                                                                                    | Pass.  |
+| Type a non-existent page path.                        | Redirects to 404 page.                                                                                                   | Pass.  |
+| 404 page                                              | Appears as should with navigation back to homepage.                                                                      | Pass.  |
+| 404 page - home button.                               | Redirects to Homepage.                                                                                                   | Pass.  |
+
 
 ### Lighthouse Report
 
