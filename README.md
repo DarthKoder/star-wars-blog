@@ -8,7 +8,7 @@ Anybody can access it, register by creating an account and login to start discus
 
 All users will need to go through a registration process before they can participate. They will the need to login with a authenticated user profile to either post or comment, they will also be able to edit or delete any post they themselves have created.
 
-![Star Wars Discussion Blog](/starwars_blog/static/img/star-wars-blog-index.png)
+![Star Wars Discussion Blog](/starwars_blog/static/img/indexnew-starwars-blog.png)
  
 [View Star Wars Discussion Blog project here](https://github.com/DarthKoder/star-wars-blog)
 - - -
@@ -223,7 +223,7 @@ See the Flowchart For the Schema here: ![Flow Chart - Star Wars Blog](/starwars_
     * I have used colours associated with Star Wars such as sith red #ff0000, the famous Star Wars yellow #feda4a, Jedi green #239400, Jedi blue #007bce along with a contrasting white #fff, all on the space style black #000000 and #222 for card contrast. These colours are to help make the user feel immersed and really connect with the Star Wars theme. 
     * There is a 'READ MORE' button which will take to to the full post screen witch has all the post information and comments related to that post.
 
-    ![Main Homepage](/starwars_blog/static/img/star-wars-blog-index.png)
+    ![Main Homepage](/starwars_blog/static/img/indexnew-starwars-blog.png)
 
 * Post Screen 
     * The Post Screen is the screen that come after clicking the "READ MORE" button on the posts on the homepage/index.
@@ -231,7 +231,7 @@ See the Flowchart For the Schema here: ![Flow Chart - Star Wars Blog](/starwars_
     * If logged in you will see the option to comment, otherwise it will ask you to login to comment.
     * If logged in and you own the post it will show you the 'Edit Post', 'Delete Post' and 'Delete Comment' buttons, these are all reactive buttons when hovered over.
 
-    ![Post Screen](/starwars_blog/static/img/star-wars-blog-post.png)
+    ![Post Screen](/starwars_blog/static/img/postnew-starwars-blog.png)
 
 * Edit Post Screen 
     * The Edit Post Screen is the screen that come after clicking the "Edit Post" button on an owned post on the homepage/index when logged in.
