@@ -172,3 +172,9 @@ def delete_comment(comment_id):
     db.session.commit()
     flash('Comment has been deleted.')
     return redirect(url_for('post', post_id=comment.post_id))
+
+
+# 404 Error Handler
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html', title="Page Not Found"), 404

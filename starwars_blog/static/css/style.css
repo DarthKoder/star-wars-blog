@@ -282,3 +282,21 @@ hr {
     right: 10px;
 
 }
+/* 404 Error Page */
+
+.error-page body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+    
+.error-page h1 {
+    font-size: 50px;
+}
+.error-page p {
+    font-size: 20px;
+}
+.error-page a {
+    text-decoration: none;
+    color: #007bff;
+}
