@@ -300,3 +300,17 @@ hr {
     text-decoration: none;
     color: #007bff;
 }
+
+.optional-field {
+    color: #ffe81f;
+}
+
+.main-post {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.poster {
+    color: #239400;
+    font-weight: 700;
+}
